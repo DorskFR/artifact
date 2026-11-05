@@ -1,0 +1,30 @@
+{
+  "name": "artifact",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:server": "node --watch server/main.ts",
+    "build": "vite build",
+    "start": "node server/main.ts",
+    "typecheck": "svelte-check --tsconfig ./tsconfig.json && tsc -p server/tsconfig.json",
+    "lint": "biome check .",
+    "test": "vitest run",
+    "check": "bun run typecheck && bun run lint && bun run test"
+  },
+  "dependencies": {
+    "@dorsk/tsumikit": "^0.81.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.6",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@tsconfig/svelte": "^5.0.8",
+    "@types/node": "^24.0.0",
+    "svelte": "^5.57.2",
+    "svelte-check": "^4.7.7",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5"
+  }
+}
