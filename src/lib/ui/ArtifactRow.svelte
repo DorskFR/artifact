@@ -28,7 +28,7 @@
     <a class="title" href={entryUrl(a)} target="_blank" rel="noopener" title={a.title}>{a.title}</a>
     <Text size="xs" tone="faint" mono truncate>{a.id}</Text>
   </div>
-  <Badge size="xs" icon={KIND_ICON[a.kind]}>{KIND_LABEL[a.kind]}</Badge>
+  <span class="kind"><Badge size="xs" icon={KIND_ICON[a.kind]}>{KIND_LABEL[a.kind]}</Badge></span>
   <Text size="sm" tone="muted" class="when"><Timestamp value={a.created} mode="datetime" details /></Text>
   <Text size="sm" tone="faint" numeric class="size">{formatBytes(a.size)}</Text>
   <IconButton icon="info" label="Details" box="sm" variant="ghost" onclick={() => onselect(a.id)} />
@@ -75,7 +75,7 @@
     }
     .row :global(.when),
     .row :global(.size),
-    .row :global([data-tsu='Badge']) {
+    .kind {
       display: none;
     }
   }
