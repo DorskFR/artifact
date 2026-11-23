@@ -1,7 +1,7 @@
 {
   "name": "artifact",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -14,7 +14,7 @@
     "check": "bun run typecheck && bun run lint && bun run test"
   },
   "dependencies": {
-    "@dorsk/tsumikit": "^0.81.0"
+    "@dorsk/tsumikit": "^0.94.2"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.6",

@@ -5,7 +5,7 @@
     "": {
       "name": "artifact",
       "dependencies": {
-        "@dorsk/tsumikit": "^0.81.0",
+        "@dorsk/tsumikit": "^0.94.2",
       },
       "devDependencies": {
         "@biomejs/biome": "2.5.6",
@@ -39,7 +39,7 @@
 
     "@biomejs/cli-win32-x64": ["@biomejs/cli-win32-x64@2.5.6", "", { "os": "win32", "cpu": "x64" }, "sha512-WN05KwXnTO/2J45RQPvzZMXf7tZUIofHoR35xIPfCo7pQ2RFidxI8sfb5mGsaTxdMmEOzHzOPRCdA5/fCpc7xQ=="],
 
-    "@dorsk/tsumikit": ["@dorsk/tsumikit@0.81.0", "", { "peerDependencies": { "svelte": "^5.0.0" } }, "sha512-asv7FkRIs3vVwaPf98w3PD+83SsIqQdE823rGgeokc33seOHZPcXYQvnokW9mtMdLON3oBZR6DX5ibvOyCbi1w=="],
+    "@dorsk/tsumikit": ["@dorsk/tsumikit@0.94.2", "", { "peerDependencies": { "svelte": "^5.0.0" }, "bin": { "tsumikit-lint": "lint/cli.mjs" } }, "sha512-IzwTXW3d4f/QSa+V3UGgn+qiLz5IrOTfbvA8ayLooQU3Ktn5u785M85//ESp4Fq3jwWKK3GDsHQ0+i1YHqDqnQ=="],
 
     "@jridgewell/gen-mapping": ["@jridgewell/gen-mapping@0.3.13", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.0", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA=="],
 

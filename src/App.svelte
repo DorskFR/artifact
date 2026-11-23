@@ -119,16 +119,18 @@
         <Text size="xs" tone="muted" numeric class="total">{items.length} artifacts · {formatBytes(total)}</Text>
       {/if}
       <div class="controls">
-        <Input
-          bind:value={query}
-          bind:el={search}
-          icon="search"
-          placeholder="Search titles, ids, files…  /"
-          clearable
-          size="sm"
-          grow
-          aria-label="Search artifacts"
-        />
+        <div class="search">
+          <Input
+            bind:value={query}
+            bind:el={search}
+            icon="search"
+            placeholder="Search titles, ids, files…  /"
+            clearable
+            size="sm"
+            width="min(100%, 420px)"
+            aria-label="Search artifacts"
+          />
+        </div>
         <SelectButton label="Kind" icon="filter" value={kind} options={kindOptions} onchange={(v) => (kind = v as KindFilter)} box="sm" />
         <SelectButton label="Sort" icon="arrow-down" value={sort} options={SORTS} onchange={(v) => (sort = v as Sort)} box="sm" />
         <IconButton
@@ -199,9 +201,6 @@
     border-bottom: var(--edge-width) solid var(--surface-edge);
     padding-block: var(--sp-2);
   }
-  .group :global([data-tsu='SectionHeader']) {
-    top: 52px;
-  }
   .bar {
     display: flex;
     padding-inline: var(--sp-3);
@@ -219,14 +218,17 @@
     min-width: min(100%, 320px);
     justify-content: flex-end;
   }
-  .controls :global([data-tsu='Input']) {
-    max-width: 420px;
+  .search {
+    display: flex;
+    flex: 1 1 0;
+    min-width: 0;
   }
   .group {
+    --sticky-offset: 52px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-3);
     margin-bottom: var(--sp-6);
-  }
-  .group :global([data-tsu='SectionHeader']) {
-    margin-bottom: var(--sp-3);
   }
   .rows {
     list-style: none;
