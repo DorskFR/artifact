@@ -1,15 +1,17 @@
 # syntax=docker/dockerfile:1
-FROM node:26.12.1-trixie-slim AS web
+FROM node:26.13.1-trixie-slim AS web
 WORKDIR /src
 COPY package.json bun.lock ./
 RUN npm install -g bun@1.3.11 && bun install --frozen-lockfile
 COPY . .
 RUN bun run build
 
-FROM node:26.12.1-trixie-slim
+FROM node:26.13.1-trixie-slim
 RUN apt-get update \
+ && apt-get upgrade -y \
  && apt-get install -y --no-install-recommends chromium-headless-shell poppler-utils fonts-dejavu-core fonts-noto-core fonts-noto-cjk tini \
  && rm -rf /var/lib/apt/lists/* \
+ && rm -rf /usr/local/lib/node_modules/npm /usr/local/lib/node_modules/corepack /usr/local/bin/npm /usr/local/bin/npx /usr/local/bin/corepack \
  && chromium-headless-shell --version && pdftoppm -v
 WORKDIR /app
 COPY server/*.ts server/
